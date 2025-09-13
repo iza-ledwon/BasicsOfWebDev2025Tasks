@@ -1,0 +1,13 @@
+/*
+Author: Izabela Ledwon
+Date: 2025-09-13
+*/
+body {
+  background-color: #aec5eb;
+}
+h1 {
+  color: green;
+}
+p {
+    color: blue;
+}
