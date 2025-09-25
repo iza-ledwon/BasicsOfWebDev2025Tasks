@@ -1,0 +1,38 @@
+/*
+Author: Izabela Ledwoń
+Date: 2025-09-14
+*/
+body {
+  background-color: #ffdaf9;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  color: #597c9c;
+  font-size: 2rem;
+}
+h2 {
+  color: #7ba5cd;
+  font-size: 1.5rem;
+}
+p {
+  color: #74689e;
+}
+
+ul li {
+  list-style-type: square; /* [Function: Custom bullet style] */
+  color: #74689e;
+}
+
+ol li {
+  list-style-type: kannada;
+  color: #74689e;
+}
+a {
+  color: #74689e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline overline;
+  color: #321231;
+}
