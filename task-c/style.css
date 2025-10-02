@@ -2,3 +2,34 @@
 Author: Ville Heikkiniemi (CHANGE THIS)
 Date: 2025-09-01 (CHANGE THIS)
 */
+body {
+  background-color: #B9A5CA;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+h2 {
+  color: #003366;
+  font-size: 2rem;
+  text-align: center;
+  margin: auto;
+}
+img, video, audio{
+    max-width: 500px;
+    display: block;
+    margin: auto;
+}
+p{
+    max-width: 600px;
+    margin: auto;
+}
+ul, ol {
+  max-width: 600px;
+  margin: auto;
+}
+
+ul li {
+  list-style-type: square; /* [Function: Custom bullet style] */
+  color: #444444;
+}
