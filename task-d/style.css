@@ -1,0 +1,83 @@
+/*
+Author: Izabela Ledwoń
+Date: 2025-10-06
+*/
+body {
+    background-color: lightblue;
+    color: #333;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: hotpink;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.highlight {
+    background-color: rgb(254, 254, 22);
+    color: hotpink;
+    font-weight: bold;
+}
+
+.box {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px auto;
+    width: 60%;
+}
+.imgBox {
+    background-color: rgb(205, 228, 236);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px auto;
+    width: 60%;
+}
+
+#special-message {
+    color: hotpink;
+    font-style: italic;
+}
+
+h1, h2, h3 {
+    margin-bottom: 8px;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+ul li {
+    list-style-type: square;
+    color: #444;
+}
+
+
+img[alt] {
+    border: 3px solid #444;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+}
+
+a[target="_blank"] {
+    font-style: italic;
+}
+
+a[href] {
+    text-decoration: none;
+    color: hotpink;
+    font-weight: bold;
+}
+
+a[href]:hover {
+    text-decoration: underline;
+}
