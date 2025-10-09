@@ -55,7 +55,7 @@ ul {
     margin: 0 auto;
     padding-left: 20px;
 }
-ul li {
+section ul li {
     list-style-type: square;
     color: #444;
 }
