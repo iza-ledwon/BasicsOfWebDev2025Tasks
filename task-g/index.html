@@ -25,25 +25,45 @@
       <!-- Student info (30%) -->
       <section class="student-info" aria-label="Student information">
         <h2 class="student-info-title">Information</h2>
-        <p><span class="student-name">Your Name</span></p>
-        <p><span class="student-group">Group number</span></p>
+        <p><span class="student-name">Izabela Ledwoń</span></p>
+        <p><span class="student-group">NITS24K</span></p>
       </section>
 
       <!-- Controls (70%): add course + day marks -->
       <section class="controls" aria-label="Add course row">
-        <h2 class="controls-title">Add Course</h2>
+        <h2 class="controls-title">Add data</h2>
 
-        <form id="addCourseForm">
+        <form id="addDataForm">
           <div class="form-row">
-            <label for="courseName">Course name</label>
-            <input id="courseName" name="courseName" type="text" required placeholder="e.g., Web Development Basics">
-          </div>
+            <div class="input-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required placeholder="eg. Izabela Ledwoń">
+              <span class="nameInput"></span>
+            </div>
 
-          <fieldset class="days-group">
-            <legend>Days (yes = &#9989;, no = &#10060;)</legend>
-            <label><input type="checkbox" name="day" value="Tue"> Tue</label>
-            <label><input type="checkbox" name="day" value="Thu"> Thu</label>
-          </fieldset>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="eg. izabela.ledwon@centria.fi">
+              <span class="emailInput"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="telephone">Phone number</label>
+              <input id="telephone" name="telephone" type="tel" pattern="^\+358\d{7,12}$" placeholder="+358…" required>
+              <span class="telInput"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="bday">Birthday</label>
+              <input id="bday" name="bday" type="date" required placeholder="eg. 20/09/2005">
+              <span class="bdayInput"></span>
+            </div>
+
+            <label class="agree">
+              <input type="checkbox" id="agreeTerms" /> I agree to the terms
+              <span class="agreeInput"></span>
+            </label>
+          </div>
 
           <div class="form-row">
             <button id="addRowBtn" type="submit" class="btn">Add row</button>
@@ -55,12 +75,15 @@
 
     <!-- Table -->
     <div class="table-wrap">
-      <table class="table" id="timetable">
+      <table class="table" id="dataTable">
         <thead>
           <tr>
-            <th>Course</th>
-            <th>Tue</th>
-            <th>Fri</th>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Birthday</th>
+            <th>Terms accepted</th>
           </tr>
         </thead>
         <tbody>
