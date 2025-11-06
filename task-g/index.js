@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const agreeInput = document.getElementById("agreeTerms");
 
 function setError(input, message) {
-  const span = input.parentElement.querySelector('span'); // works for checkbox and text inputs if span is inside parent
+  const span = input.parentElement.querySelector('span');
   if(span) span.textContent = message;
 }
 
