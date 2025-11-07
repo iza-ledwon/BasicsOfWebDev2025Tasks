@@ -33,35 +33,35 @@
       <section class="controls" aria-label="Add course row">
         <h2 class="controls-title">Add data</h2>
 
-        <form id="addDataForm">
+        <form id="addDataForm" novalidate>
           <div class="form-row">
             <div class="input-group">
               <label for="name">Full name</label>
-              <input id="name" name="name" type="text" required placeholder="eg. Izabela Ledwoń">
-              <span class="nameInput"></span>
+              <input id="name" name="name" type="text" required placeholder="eg. Izabela Ledwoń"><br>
+              <span class="nameInput error"></span>
             </div>
 
             <div class="input-group">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="eg. izabela.ledwon@centria.fi">
-              <span class="emailInput"></span>
+              <input id="email" name="email" type="email" required placeholder="eg. izabela.ledwon@centria.fi"><br>
+              <span class="emailInput error"></span>
             </div>
 
             <div class="input-group">
               <label for="telephone">Phone number</label>
-              <input id="telephone" name="telephone" type="tel" pattern="^\+358\d{7,12}$" placeholder="+358…" required>
-              <span class="telInput"></span>
+              <input id="telephone" name="telephone" type="tel" placeholder="+358…" required><br>
+              <span class="telInput error"></span>
             </div>
 
             <div class="input-group">
               <label for="bday">Birthday</label>
-              <input id="bday" name="bday" type="date" required placeholder="eg. 20/09/2005">
-              <span class="bdayInput"></span>
+              <input id="bday" name="bday" type="date" required placeholder="eg. 20/09/2005"><br>
+              <span class="bdayInput error"></span>
             </div>
 
             <label class="agree">
-              <input type="checkbox" id="agreeTerms" /> I agree to the terms
-              <span class="agreeInput"></span>
+              <input type="checkbox" id="agreeTerms" /> I agree to the terms<br>
+              <span class="agreeInput error"></span>
             </label>
           </div>
 

@@ -40,19 +40,27 @@ function setError(input, message) {
       return;
     }
 
-    const today = new Date();
-    const bdayAsDate = new Date(bday);
-
-    if (bday > today) {
-      setError(bdayInput,"Birth date cannot be in the future");
+    if (!(email.includes("@"))) {
+      setError(emailInput,"Email must include an @");
       return;
     }
+    if (!(tel.includes("+358"))) {
+      setError(telInput,"Phone number must start with +358");
+      return;
+    }
+
+    const today = new Date();
+    const bdayAsDate = new Date(bday);
 
     const age = today.getFullYear() - bdayAsDate.getFullYear();
     const monthDiff = today.getMonth() - bdayAsDate.getMonth();
     const dayDiff = today.getDate() - bdayAsDate.getDate();
     const actualAge = age - (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? 1 : 0);
-    if (actualAge <= 13) {
+
+    if (bday > today) {
+      setError(bdayInput,"Birth date cannot be in the future");
+      return;
+    } else if (actualAge <= 13) {
       setError(bdayInput, "You must be over 13!");
       return;
     }
