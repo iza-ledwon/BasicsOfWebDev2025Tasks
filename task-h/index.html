@@ -1,97 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Weekly Timetable</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="index.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800 font-sans">
   <!--
     Author: Izabela Ledwoń
-    Date: 2025-11-05
+    Date: 2025-11-09
   -->
-
-  <header class="site-header">
-    <h1>Registeration page</h1>
+  <header class="bg-pink-400 text-white text-center py-6">
+    <h1 class="text-2xl font-semibold">Registration Page</h1>
   </header>
 
-  <main class="content">
-    <!-- Top row split into two blocks -->
-    <div class="top-grid">
-      <!-- Student info (30%) -->
-      <section class="student-info" aria-label="Student information">
-        <h2 class="student-info-title">Information</h2>
-        <p><span class="student-name">Izabela Ledwoń</span></p>
-        <p><span class="student-group">NITS24K</span></p>
+  <main class="mx-4 md:mx-16 lg:mx-32 py-6 space-y-6">
+
+    <div class="flex flex-col md:flex-row gap-6">
+
+      <!-- Student info -->
+      <section class="bg-white border border-gray-300 rounded-lg p-4 shadow-sm md:w-1/3 hidden sm:block">
+        <h2 class="text-lg font-semibold mb-2">Information</h2>
+        <p class="font-medium">Izabela Ledwoń</p>
+        <p class="font-medium mt-1">NITS24K</p>
       </section>
 
-      <!-- Controls (70%): add course + day marks -->
-      <section class="controls" aria-label="Add course row">
-        <h2 class="controls-title">Add data</h2>
+      <section class="bg-white border border-gray-300 rounded-lg p-4 shadow-sm w-full md:w-2/3">
+        <h2 class="text-lg font-semibold mb-3">Add Data</h2>
 
-        <form id="addDataForm" novalidate>
-          <div class="form-row">
-            <div class="input-group">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" required placeholder="eg. Izabela Ledwoń"><br>
-              <span class="nameInput error"></span>
+        <form id="addDataForm" novalidate class="space-y-4">
+
+          <div class="space-y-3">
+            <div>
+              <label class="font-medium">Full name</label>
+              <input id="name" type="text" class="w-full border rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-pink-200">
+              <span class="nameInput text-red-500 text-sm"></span>
             </div>
 
-            <div class="input-group">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="eg. izabela.ledwon@centria.fi"><br>
-              <span class="emailInput error"></span>
+            <div>
+              <label class="font-medium">Email</label>
+              <input id="email" type="email" class="w-full border rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-pink-200">
+              <span class="emailInput text-red-500 text-sm"></span>
             </div>
 
-            <div class="input-group">
-              <label for="telephone">Phone number</label>
-              <input id="telephone" name="telephone" type="tel" placeholder="+358…" required><br>
-              <span class="telInput error"></span>
+            <div>
+              <label class="font-medium">Phone number</label>
+              <input id="telephone" type="tel" class="w-full border rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-pink-200">
+              <span class="telInput text-red-500 text-sm"></span>
             </div>
 
-            <div class="input-group">
-              <label for="bday">Birthday</label>
-              <input id="bday" name="bday" type="date" required placeholder="eg. 20/09/2005"><br>
-              <span class="bdayInput error"></span>
+            <div>
+              <label class="font-medium">Birthday</label>
+              <input id="bday" type="date" class="w-full border rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-pink-200">
+              <span class="bdayInput text-red-500 text-sm"></span>
             </div>
 
-            <label class="agree">
-              <input type="checkbox" id="agreeTerms" /> I agree to the terms<br>
-              <span class="agreeInput error"></span>
+            <label class="flex items-center gap-2 mt-2">
+              <input type="checkbox" id="agreeTerms" class="w-4 h-4">
+              <span>I agree to the terms</span>
+              <span class="agreeInput text-red-300 text-sm"></span>
             </label>
           </div>
 
-          <div class="form-row">
-            <button id="addRowBtn" type="submit" class="btn">Add row</button>
-            <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button type="submit" 
+            class="px-4 py-2 bg-pink-300 text-white rounded hover:bg-pink-500 focus:ring-2 focus:ring-offset-2 focus:ring-pink-400">
+              Add row
+            </button>
+            <button type="reset"
+              class="px-4 py-2 bg-gray-300 text-white rounded hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+              Clear
+            </button>
           </div>
+
         </form>
       </section>
+
     </div>
 
     <!-- Table -->
-    <div class="table-wrap">
-      <table class="table" id="dataTable">
-        <thead>
+    <div class="bg-white border border-gray-300 rounded-lg p-4 shadow-sm overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-pink-400 text-white">
           <tr>
-            <th>Timestamp</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone number</th>
-            <th>Birthday</th>
-            <th>Terms accepted</th>
+            <th class="p-3 w-[15%]">Timestamp</th>
+            <th class="p-3 w-[25%]">Name</th>
+            <th class="p-3 w-[25%]">Email</th>
+            <th class="p-3 w-[20%]">Phone</th>
+            <th class="p-3 w-[10%]">Birthday</th>
+            <th class="p-3 w-[10%] text-center">Terms</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="divide-y">
         </tbody>
       </table>
     </div>
-  </main>
 
+  </main>
 </body>
 
 </html>

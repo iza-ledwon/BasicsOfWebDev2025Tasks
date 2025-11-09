@@ -1,10 +1,10 @@
 // index.js
 // Author: Izabela Ledwoń
-// Date: 2025-11-05
+// Date: 2025-11-09
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("addDataForm");
-  const table = document.getElementById("dataTable").querySelector("tbody");
+  const table = document.querySelector("table tbody");
 
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
@@ -13,63 +13,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const agreeInput = document.getElementById("agreeTerms");
 
 function setError(input, message) {
-  const span = input.parentElement.querySelector('span');
-  if(span) span.textContent = message;
-}
+    const span = input.parentElement.querySelector("span");
+    if (span) span.textContent = message;
+  }
+
+  function clearErrors() {
+    document.querySelectorAll(".nameInput, .bdayInput, .agreeInput, .emailInput, .telInput")
+      .forEach(span => span.textContent = "");
+  }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    clearErrors();
 
-  document.querySelectorAll('.nameInput, .bdayInput, .agreeInput, .emailInput, .telInput')
-    .forEach(span => span.textContent = '');
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const tel = telInput.value.trim();
-    const bday = bdayInput.value;
+    const name   = nameInput.value.trim();
+    const email  = emailInput.value.trim();
+    const tel    = telInput.value.trim();
+    const bday   = bdayInput.value;
     const agreed = agreeInput.checked;
 
-    if (!name || !email || !tel || !bday) {
-      alert("Please fill all fields");
-      event.preventDefault();
+    let valid = true;
+
+    if (!name)  { setError(nameInput,  "Required"); valid = false; }
+    if (!email) { setError(emailInput, "Required"); valid = false; }
+    if (!tel)   { setError(telInput,   "Required"); valid = false; }
+    if (!bday)  { setError(bdayInput,  "Required"); valid = false; }
+    if (!agreed){ setError(agreeInput, "Required"); valid = false; }
+
+    if (!valid) return;
+
+    if (!name.includes(" ") || name.length < 5) {
+      setError(nameInput, "Enter first + last name");
       return;
     }
 
-    if (!(name.includes(" ")) || name.length < 5) {
-      setError(nameInput,"Name must be 2 words, at least 2 letters each");
+    if (!email.includes("@")) {
+      setError(emailInput, "Invalid email");
       return;
     }
 
-    if (!(email.includes("@"))) {
-      setError(emailInput,"Email must include an @");
-      return;
-    }
-    if (!(tel.includes("+358"))) {
-      setError(telInput,"Phone number must start with +358");
+    if (!tel.startsWith("+358")) {
+      setError(telInput, "Must start with +358");
       return;
     }
 
     const today = new Date();
-    const bdayAsDate = new Date(bday);
+    const birthDate = new Date(bday);
 
-    const age = today.getFullYear() - bdayAsDate.getFullYear();
-    const monthDiff = today.getMonth() - bdayAsDate.getMonth();
-    const dayDiff = today.getDate() - bdayAsDate.getDate();
-    const actualAge = age - (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? 1 : 0);
-
-    if (bday > today) {
-      setError(bdayInput,"Birth date cannot be in the future");
-      return;
-    } else if (actualAge <= 13) {
-      setError(bdayInput, "You must be over 13!");
+    if (birthDate > today) {
+      setError(bdayInput, "Cannot be in future");
       return;
     }
 
-    if (!agreed) {
-      setError(agreeInput,"Please agree to the terms.");
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+
+    if (age <= 13) {
+      setError(bdayInput, "Must be 14+");
       return;
     }
-    
 
     const row = document.createElement("tr");
 
@@ -94,7 +97,6 @@ function setError(input, message) {
     bdayCell.textContent = bday;
     row.appendChild(bdayCell);
 
-    // Terms agreement cell
     const agreeCell = document.createElement("td");
     agreeCell.textContent = agreed ? "✅" : "❌";
     row.appendChild(agreeCell);
