@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Timetable</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <!--
+    Author: Izabela Ledwoń
+    Date: 2025-11-05
+  -->
+
+  <header class="site-header">
+    <h1>Registeration page</h1>
+  </header>
+
+  <main class="content">
+    <!-- Top row split into two blocks -->
+    <div class="top-grid">
+      <!-- Student info (30%) -->
+      <section class="student-info" aria-label="Student information">
+        <h2 class="student-info-title">Information</h2>
+        <p><span class="student-name">Izabela Ledwoń</span></p>
+        <p><span class="student-group">NITS24K</span></p>
+      </section>
+
+      <!-- Controls (70%): add course + day marks -->
+      <section class="controls" aria-label="Add course row">
+        <h2 class="controls-title">Add data</h2>
+
+        <form id="addDataForm" novalidate>
+          <div class="form-row">
+            <div class="input-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required placeholder="eg. Izabela Ledwoń"><br>
+              <span class="nameInput error"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="eg. izabela.ledwon@centria.fi"><br>
+              <span class="emailInput error"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="telephone">Phone number</label>
+              <input id="telephone" name="telephone" type="tel" placeholder="+358…" required><br>
+              <span class="telInput error"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="bday">Birthday</label>
+              <input id="bday" name="bday" type="date" required placeholder="eg. 20/09/2005"><br>
+              <span class="bdayInput error"></span>
+            </div>
+
+            <label class="agree">
+              <input type="checkbox" id="agreeTerms" /> I agree to the terms<br>
+              <span class="agreeInput error"></span>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <button id="addRowBtn" type="submit" class="btn">Add row</button>
+            <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table class="table" id="dataTable">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Birthday</th>
+            <th>Terms accepted</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+
+</html>
