@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+Author: Izabela Ledwoń
+Date: 2025-11-29
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Movie rentals</title>
+</head>
+
+<body class="flex flex-col min-h-screen text-rose-950">
+    <header class="bg-rose-950 text-white">
+        <div class="flex items-center justify-between p-4">
+            <nav class="flex gap-6">
+                <a href="index.html" class="text-pink-200 hover:text-pink-400">Home</a>
+                <a href="catalogue.html" class="text-pink-200 hover:text-pink-400">Movies</a>
+                <a href="order.html" class="text-pink-200 hover:text-pink-400">Rent</a>
+            </nav>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Login</a>
+        </div>
+    </header>
+
+<section class="relative bg-cover bg-center bg-no-repeat text-white flex items-center justify-center h-screen"
+    style="background-image: url('cinema.jpg');">
+
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative z-10 text-center">
+        <h1 class="text-4xl font-bold mb-4 drop-shadow-lg text-pink-200">Thank you for ordering!</h1>
+        <p class="text-lg mb-6 drop-shadow-lg text-pink-200">You'll get an email soon!</p>
+        <a href="index.html" class="inline-block text-pink-600 px-4 py-2 rounded bg-pink-100 hover:bg-pink-200">
+            Back to main
+        </a>
+    </div>
+</section>
+
+    <footer class="bg-rose-950 text-white p-4 text-center">
+        <nav class="flex justify-center gap-4 p-2">
+            <a href="#" class="text-pink-200 hover:text-pink-400">How it works</a>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Rules and regulations</a>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Contact us</a>
+        </nav>        
+    </footer>
+</body>
+
+</html>
