@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+Author: Izabela Ledwoń
+Date: 2025-11-16
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Movie rentals</title>
+</head>
+
+<body class="flex flex-col min-h-screen text-rose-950">
+    <header class="bg-rose-950 text-white">
+        <div class="flex items-center justify-between p-4">
+            <nav class="flex gap-6">
+                <a href="index.html" class="text-pink-200 hover:text-pink-400">Home</a>
+                <a href="catalogue.html" class="text-pink-200 hover:text-pink-400">Movies</a>
+                <a href="order.html" class="text-pink-200 hover:text-pink-400">Rent</a>
+            </nav>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Login</a>
+        </div>
+    </header>
+
+    <section class="relative bg-cover bg-center bg-no-repeat text-white text-center py-32"
+        style="background-image: url('cinema.jpg');">
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="relative z-10">
+            <h1 class="text-4xl font-bold mb-4 drop-shadow-lg text-pink-200">Movie rentals</h1>
+            <p class="text-lg mb-6 drop-shadow-lg text-pink-200">Go back in time and get your movies the old fashioned way!</p>
+            <a href="order.html" class="text-pink-600 px-4 py-2 rounded bg-pink-100 hover:bg-pink-200">
+                Get started
+            </a>
+        </div>
+
+    </section>
+
+
+  <div class="flex flex-grow flex-col md:flex-row">
+    <main class="flex-grow p-6 bg-gray-50 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <h2 class="text-xl font-semibold col-span-full text-center">
+        See available rentals:
+      </h2>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="jokerMP.jpg" 
+      alt="Joker movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Joker
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="avatarMP.jpg" 
+      alt="Avatar movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Avatar
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="fnafMP.jpg" 
+      alt="Five nights at Freddy's movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Five Nights at Freddy's
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="starwarsMP.jpg" 
+      alt="Star Wars movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Star wars
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="wickedMP.jpg" 
+      alt="Wicked movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Wicked
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-4 shadow rounded overflow-hidden">
+  <div class="relative">
+    <img 
+      src="halloweenMP.jpg" 
+      alt="Halloween movie poster"
+      class="w-full h-80 rounded object-contain"
+    >
+    <div class="absolute inset-0 flex items-center justify-center
+                opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <h3 class="text-pink-100 text-4xl font-semibold text-center drop-shadow-lg">
+        Halloween
+      </h3>
+    </div>
+  </div>
+</div>
+    </main>
+
+        <aside class="w-full md:w-1/4 bg-gray-200 p-4">
+
+            <h2 class="text-base font-semibold col-span-full text-center p-2">
+                News:
+            </h2>
+
+            <div class="flex flex-grow md:flex-col flex-row gap-2">
+            <div class="bg-white p-2 shadow rounded overflow-hidden text-xs">"Joker: Folie à Deux" is now available to rent! Experience the thrilling sequel today.</div>   
+            <div class="bg-white p-2 shadow rounded overflow-hidden text-xs">"Oppenheimer" has just been added to our collection - Rent it and see it now!</div> 
+            <div class="bg-white p-2 shadow rounded overflow-hidden text-xs">Check out "Barbie" - a colorful and fun family favorite now on our site.</div> 
+            <div class="bg-white p-2 shadow rounded overflow-hidden text-xs">"Killers of the Flower Moon" will be available this weekend. Watch your rental now!</div> 
+            <div class="bg-white p-2 shadow rounded overflow-hidden text-xs">"Spider-Man: Across the Spider-Verse" is trending - watch the animation masterpiece today!</div>  
+            </div>
+        </aside>
+    </div>
+
+    <footer class="bg-rose-950 text-white p-4 text-center">
+        <nav class="flex justify-center gap-4 p-2">
+            <a href="#" class="text-pink-200 hover:text-pink-400">How it works</a>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Rules and regulations</a>
+            <a href="#" class="text-pink-200 hover:text-pink-400">Contact us</a>
+        </nav>        
+    </footer>
+</body>
+
+</html>
